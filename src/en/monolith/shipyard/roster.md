@@ -55,7 +55,7 @@ Medical vessels for emergency responders and armed trauma teams.
 * Medical, Wild (Large):
 * Medical, Wild (Large):
 
-* Interceptor, Medical (Small):
+* Strafer, Medical (Small):
 * Destroyer, Medical (Small):
 * Destroyer, Medical (Medium):
 * Cruiser, Medical, Wild (Medium):
@@ -66,7 +66,7 @@ Medical vessels for emergency responders and armed trauma teams.
 ## Mercenary Shipyard
 Economic and combat vessels. Usually valid military targets. May include weapons with faction balancing.
 
-* Research, Wild (Small): 
+* Research, Wild (Small):
 * Research, Wild (Medium):
 
 * Cargo, Wild (Small):
@@ -89,7 +89,7 @@ Economic and combat vessels. Usually valid military targets. May include weapons
 * Multipurpose (Medium):
 * Multipurpose (Large):
 
-* Interceptor (Small):
+* Strafer (Small):
 * Destroyer (Small):
 * Brawler (Medium):
 * Destroyer (Medium):
@@ -99,63 +99,47 @@ Economic and combat vessels. Usually valid military targets. May include weapons
 ## TSFMC Shipyard
 Primarily combat vessels, exclusive to the Trans-Solarian Federation.
 
-* Research, Salvage (Small): PIN Shiv
-* Research, Salvage (Medium): ENG Welder
+* Research, Salvage (Small):
+* Research, Salvage (Medium):
 
-* Medical (Small): SKR Syringe
+* Multipurpose (Medium):
+* Multipurpose (Large):
 
-* Carrier (Medium): SKR Tumour (Needs replacement)
+* Strafer (Small):
+* Strafer (Medium):
 
-* Multipurpose (Medium): SKR Calypso (Needs replacement)
-* Multipurpose (Large): 
-
-* Interceptor (Small): SKR Ocelot (Needs replacement)
-* Interceptor (Medium): SKR Sentinel (Needs replacement)
-* Interceptor (Large) CRSW Andromeda
-
-* Destroyer (Small): PIN Hoplite
-* Destroyer, Wild (Small): SKR Fracture (Needs replacement)
+* Destroyer (Small):
+* Destroyer, Wild (Small):
 * Destroyer (Medium):
 
-Artillery (Small):
-Artillery (Medium): SKR Dagger (Needs replacement)
+* Brawler (Medium):
 
-* Destroyer (Capital): TSFN Flyssa
+* Cruiser (Medium):
+* Cruiser (Large):
 
-* Brawler (Medium): SVE Tarantula ( Needs replacement / modernisation)
-
-* Cruiser (Medium): 
-* Cruiser (Large): SKR Polaris (Needs replacement)
+* Cruiser (Capital):
 
 ## PDV Shipyard
 Primarily combat vessels, exclusive to the Phaethon Dynasty.
 
-* Research, Salvage (Small): PDW Spyglass MKII
-* Research, Salvage (Medium): (Needs to replace U.I Vulture)
+* Research, Salvage (Small):
+* Research, Salvage (Medium):
 
-* Medical (Small): PDW Tethys
+* Multipurpose (Medium):
+* Multipurpose (Large):
 
-* Carrier (Large): IED Motley Anne
+* Strafer (Small):
+* Strafer (Medium):
+* Strafer (Large):
 
-* Multipurpose (Medium): PDV Scorpion (Needs Replacement)
-* Multipurpose (Large): 
+* Destroyer (Small):
+* Destroyer, Wild (Small):
+* Destroyer (Medium):
 
-* Interceptor (Small): 
-* Interceptor (Medium):
-* Interceptor (Large):
-
-* Destroyer (Small): BT-Y Hazel (Needs rework)
-* Destroyer, Wild (Small): ELH Carrion
-* Destroyer (Medium): hourglass (Needs replacement, extremely outdated)
-
-* Artillery (Medium): PDV Anaconda (Needs Replacement)
-* Artillery (Large): PDW Saintie
-
-* Brawler (Small): PDW Defector
-* Brawler (Medium): PDW Neptune
-* Brawler (Large): 
+* Brawler (Medium):
 
 * Cruiser (Medium):
-* Cruiser (Large): IND Europa
+* Cruiser (Large):
 
-* Cruiser (Capital): HSS Saturn
+* Stealth (Small):
+* Stealth (Medium):
