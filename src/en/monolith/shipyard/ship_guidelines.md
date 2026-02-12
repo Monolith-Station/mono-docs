@@ -44,7 +44,7 @@ If there are five different cargo ships, don’t make another cargo ship, unless
 * Latejoin spawn point - Keep in a crew/habitable area!
 * RoofComponent on your grid (done via F7 objects menu, same way you add BecomesStation. Add the roof enabled/disabled markers to all tiles you want to not be affected by planet lighting (such as desert planet).)
 * BecomesStation component
-* Vacuum fix markers on all tiles that will be spaced! This includes diagonals.
+* Vacuum fix markers on all non-exterior tiles that will be spaced! This includes diagonals.
 
 **Economy Functionality Requirements**
 
