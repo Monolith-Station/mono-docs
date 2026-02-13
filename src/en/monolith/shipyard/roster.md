@@ -19,7 +19,7 @@ Largely economic vessels, accessible to anyone.
 
 * Salvage (Small): DIS Notch
 * Salvage (Small): DIS Vaquita
-* Salvage (Medium):
+* Salvage (Medium): DIS Rig
 * Salvage, Wild (Medium):
 * Salvage, Wild (Large):
 
