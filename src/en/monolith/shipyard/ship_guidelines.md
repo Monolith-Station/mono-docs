@@ -16,14 +16,23 @@ If there are five different cargo ships, don’t make another cargo ship, unless
 
 ### Important note for ship PRs
 
-When PRing a new ship, you must always include what kind of niche it fills (in other words, why it would be good to have it) & an image of the ship and ships's radar signature <!-- Possibly make people fill the roster.md bit as well, it would greatly help us track our current ship composition -->
+When PRing a new ship, you must always include what kind of niche it fills (in other words, consider why would anyone ever buy your ship) & an image of the ship and ships's radar signature <!-- Possibly make people fill the roster.md bit as well, it would greatly help us track our current ship composition -->
 
 When PRing the replacement of a ship, you must also include an image of the previous ship you're replacing atop of the above requirements.
 
 When PRing a tweak of an existing ship, you must also include an image of the ship BEFORE modifications. This applies for radar signature too, if changed at all in major ways (through markings)
 
+To render ship images use the following command:
+dotnet run --project Content.MapRenderer Resources/Maps/_Mono/Shuttles/
+
+Keep in mind that:
+* It can be used for multiple ships
+* It only works for ships in the Resources folder
+* Saved ships are located in 
+
 ## General Guidelines
 When mapping a ship, the most important part is keeping it consistent. Whatever you do make sure it stays consistent accross all the ship for the player's immersion.
+It is **heavily recommended to consult a maintainer on whether your ship idea will be accepted**, or periodically during the process of creating it. **Making a ship flawed at its core will waste both your time remaking it and our time reviewing it.**
 
 *Appearance*
 * General shape
@@ -58,44 +67,45 @@ When mapping a ship, the most important part is keeping it consistent. Whatever 
 * Cost
   - Use the appraisegrid command (make sure that the map is initialised & you, the aghost are OFF the grid)
   - Give it a 20% mark up at minimum, more for combat ships (take a rounded value of the appraisegrid, and multiply by 1.2. example: 57894 appraisgrid value, round to 57900, multiply by 1.2)
+  - Feel free to leave it at 20%, a maintainer will help you get a proper markup value.
 
 *Functionality*
 * FTL drives are recommended for most ships, though be judicial in your use of more advanced variants (such as CTLA-25s, CTLA-50, etc) <!-- TODO Modify this for when we're done with changing FTL --> 
-* Shields are in an interesting place - keep their effects in mind, and if you have one, make sure it has enough power! Power supply = shield durability, and they are mostly limited by APC capacity. Be careful.
+* Shields are in an interesting place - keep their effects in mind, and if you have one, make sure it has enough power! Power supply = shield durability, and they are mostly limited by APC capacity. Be careful, high-end shields may need 2 APCs.
 
 ## Fundamental Requirements
-**When creating a non scrapyard ship, you should be treating the list below as a checklist**
+**The list below is a checklist of hard requirements. Only scrapyard ships are exempt.**
 
 
 *Communications/Control*
 
-* Holopad (one with ship prefix, rogue ships use the ship antag prefix) <!-- [R] Does PDV use the antag tag ? If not I'm removing the rogue mention-->
+* Holopad (using the [ship] prefix)
 * Fax machine (same prefix usage as above)
 * Station Records computer
 * Shuttle console
 
 *Engineering*
-* Power source choose one below, note of their votality and use them as a weakpoint. <!-- Add image for votality examples below-->
+* Power source, (choose one below) note of their votality and use them as a weakpoint. <!-- Add image for votality examples below-->
   - Fueled generators: Jr PACMAN, PACMAN etc.. (using the [ship] prefix, multiple of the same kind is allowed) 
   - Solar panels (can be paired with other power sources)
   - AMEs
-  - Jr.DK, DK, Z-pinch (they emitt radiations, and should come with radiation protective gear) <!-- [R] I was told by Ilya we wanted to make Z-Pinch TSF exclusive, let me know if that's still the case.-->
+  - Jr.DK, DK, Z-pinch
   - **NO singularity/tesla**
 * Wall fuel locker/rack with fuel for your power source of choice
 * Power storage
   - SMES/Advanced SMES (Advanced allowed on a case by case basis, make sure it's consistent with the ship's style.)
   - At least one substation, consider multiple for large ships
-  - APCs for each room (multiple for powering shields if applicable) <!-- [R] Should we instead suggest independant power networks with a dedicated substation at minimum like the tarantula has ?)-->
+  - APCs for each room (multiple for powering shields if applicable) <!-- [R] Should we instead suggest independant power networks with a dedicated substation at minimum like the tarantula has ?-->
 * Functional power networking, avoid wiring under walls, exceptions are:
   - Wiring wallmounted APC/Substation
-  - Wiring external ship components (like thrusters & ship guns) <!-- [R] I might be schizo but ship guns do need power right ? -->
+  - Wiring external ship components (thrusters namely)
 
 *Atmospherics* <!-- TODO This part will need a solid amount of images to illustrate, since it's taught nowhere it's meant to be both guidelines and a guide-->
  
 * Piping
   - Avoid piping under walls (exception is linking the waste passive vent to the outside of the ship)
   - Make use of the Atmos piping layer system (You can screwdrive scrubbers & vents to change their layer, select the pipe through the spawn menu to trigger layered placement) <!-- image needed -->
-* Piping networks should connects all rooms of the ship. (exceptions are small one tile rooms for things like FTL, gyros etc.. & maints if you have any are exempt from this rule)
+* Piping networks should connect all rooms of the ship. (exceptions are small one tile rooms for things like FTL, gyros etc.. & maints if you have any are exempt from this rule)
   - You can alternatively use two passive vents to connect a smaller room with a larger one <!-- image needed -->
 * Nitrogen & Oxygen canisters, they:
   - should be accessible by the players for tank refilling
@@ -110,9 +120,8 @@ When mapping a ship, the most important part is keeping it consistent. Whatever 
   - (glass) Firelocks should be put under doors and linked to the two air alarms of the rooms they are connecting
   - same ruling for directionnal firelocks, except they are put against doors
   - All rooms with air vents & scrubbers should have an air alarm which they are connected to.
-  - *(Optional)* air sensors (the components above already act as them.)
   - *(Optional)* fire alarms (connected to all the firelocks in the room)
-  - Linking can be done manually with a multitool (**MAKE SURE TO DESTROY SAID MULTITOOL OR CLEAR IT'S NETWORK BEFORE SAVING THE GRID** (it will make invalid pop up in the ship.yml file))
+  - Linking can be done manually with a multitool (**MAKE SURE TO DESTROY SAID MULTITOOL OR CLEAR IT'S NETWORK BEFORE SAVING THE GRID** (it will make invalid popup in the ship.yml file))
 * Colored pipe networks (done with the command below)
   - #990000 for waste
   - #0055CC for distro <!-- [R] I've typed these from the top of my head, if we want to ever change these LMK -->
@@ -131,6 +140,7 @@ colornetwork [Pipe ID (you can see it by right clicking the pipe)] Pipe [color h
 * Internals cabinet/Suit storage (Filled)
 * Defibrillator cabinet (Filled)
 * All visible tiles should be tiled accordingly, don't leave them as bare plating (don't forget under airlocks) <!-- Could use a better rewording -->
+* If the ship's components present any hazard such as radiation, the ship must provide corresponding protective gear and, if applicable, shielding.
 
 *External ship components*
 * Exterior walls should be “reinforced” (plasteel) walls
@@ -155,8 +165,8 @@ colornetwork [Pipe ID (you can see it by right clicking the pipe)] Pipe [color h
 * Latejoin spawn point - Keep in a crew/habitable area! <!-- [R] I'd like to do away with this down the line and replace with cryopods, also wallmounted cryopods for smaller ships, possibly. Consequently moving it to generic ship comps. -->
 <!-- BecomeStation component is automatically added when purchasing a grid. I'm looking into making the same happen for Roof -->
 * RoofComponent on your grid (done via F7 objects menu, same way you add BecomesStation. Add the roof enabled/disabled markers to all tiles you want to not be affected by planet lighting (such as desert planet).)
-* No Roof markers on external areas (for expedition lighting namely) <!-- [R] Tell me if I'm wrong on that, I know Snowth talked about this -->
-* Vacuum markers on enclosed spaces that are meant to be spaced (like atmos burn chambers & fully spaced ships <!-- [R] We need a proper talk about this. Chek https://github.com/Monolith-Station/mono-docs/pull/18 for arguments for & against -->
+* No Roof markers on external areas (for expedition lighting namely) 
+* Vacuum markers on enclosed spaces that are meant to be spaced (like atmos burn chambers & fully spaced ships) <!-- [R] We need a proper talk about this. Chek https://github.com/Monolith-Station/mono-docs/pull/18 for arguments for & against -->
 
 ## Combat Requirements
 *All Vessels*
