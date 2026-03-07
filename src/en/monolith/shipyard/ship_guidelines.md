@@ -149,8 +149,8 @@ colornetwork [Pipe ID (you can see it by right clicking the pipe)] Pipe [color h
 * Thrusters in all four directions 
   - When placing them, make them look like they are part of the hull, not hanging out <!-- Insert image below -->
   - Unless the ship has a gimmick in mind (like strafing or omnidirectionnal), you should focus on main thrust.
-  - Thruster's exhaust path should be fully clear of whole objects (like ship guns, walls etc.. This is commonly referred to as thruster blocking)
   - You can protected thrusters with grilles
+  - Keep the exhaust zone of thrusters except for the above scenario. 5 tiles of free space for regular thrusters & 7 for large thrusters.
 * *(optional)* Large thrusters (keep in mind their large power draw!) <!-- [R] This is my personnal ruling, lmk what you think.-->
    - Small ships: Only allowed for main thrust
    - Medium & below: Only allowed for opposing directions (left/right or front/back.) <!-- [R] See RSC scallywag, I think it's a great use of this rule. -->
