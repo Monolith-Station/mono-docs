@@ -4,7 +4,11 @@ Ship Guidelines
 
 <!-- [R] = Need verifying/fact checking by maints, TL:DR of the changes are moving the order of the parts & reworking general & fundamental guidelines mainly -->
 
-This page is meant to be a comprehensive list of all that is MANDATORY in terms of ship content when mapping or remodelling ships on Monolith. 
+This page is meant to be a comprehensive list of all that is **mandatory** and **advised** in terms of ship content when mapping or remodelling ships on Monolith. 
+
+Maintainers are free to ignore these guidelines on case by case basis for the better of the game.
+
+**FAILURE TO MEET AND REFER TO MANDATORY GUIDELINES BY AN AUTHOR IS LIABLE FOR CLOSING THEIR SHIP PR.**
 
 ### Preface: Recommendations
 
@@ -13,6 +17,8 @@ It is not maintainer responsibility to fix your PR!
 
 Before beginning to actually map a ship, make sure you already have an understanding of what you wish to make, and whether it is something that players want or will use. 
 If there are five different cargo ships, don’t make another cargo ship, unless you’re trying to replace an existing one! (Look in the Ship Roster section for pre-existing ships!)
+
+Once all of that is done, feel free to take a look at current in game ships for inspiration and mapping techniques !
 
 ### Important note for ship PRs
 
@@ -53,9 +59,12 @@ It is **heavily recommended to consult a maintainer on whether your ship idea wi
 * Vessels should follow design standards for whatever (minor) faction they belong to!
     -  For TSF & PDV, redirect yourself to the faction ship guidelines
     -  Mercenary vessels are not as limited in style, but whatever theme you choose for your vessel, it should remain consistent across the hull and be coherent - it should still look good!
-* Remember to put tiling underneath your doors, and keep all floors under walls as plating (not lattice)!
-  - This can be done by running the "tilewalls" command <!-- TODO verify the command -->
-
+* Remember to put tiling underneath your doors
+* Keep all floors under walls as plating (not lattice), which can be done instantly by running the command below
+```admonish info
+tilewalls
+```
+  
 *Identification, Cost, and other Yaml changes*
 * Ship naming nomenclature: (Author) (Name) (Type)-{1}
     -  Author: Only usually seen on shipyard consoles, it has its own field in yaml. Put in whatever combination of three or four letters in, keep this consistent across ships you make! It is used to identify who made what ships (e.g Onezero0 uses SHM, John mcMapper uses JCM, etc. Don’t use the same ID as someone else!)
@@ -99,13 +108,17 @@ Only to this if you can handle modifying a yml map file. YOu can change the targ
 * Power storage
   - SMES/Advanced SMES (Advanced allowed on a case by case basis, make sure it's consistent with the ship's style.)
   - At least one substation, consider multiple for large ships
-  - APCs for each room (multiple for powering shields if applicable) <!-- [R] Should we instead suggest independant power networks with a dedicated substation at minimum like the tarantula has ?-->
+  - APCs for each room (multiple for powering shields if applicable)
 * Functional power networking, avoid wiring under walls, exceptions are:
   - Wiring wallmounted APC/Substation
   - Wiring external ship components (thrusters namely)
 
 *Atmospherics* <!-- TODO This part will need a solid amount of images to illustrate, since it's taught nowhere it's meant to be both guidelines and a guide-->
- 
+
+* Running the command below to instantly fill the inside of the ship with the regular air mix
+```admonish info
+"fixgridatmos [grid ID (you can tabulate to get it instantly)]
+```
 * Piping
   - Avoid piping under walls (exception is linking the waste passive vent to the outside of the ship)
   - Make use of the Atmos piping layer system (You can screwdrive scrubbers & vents to change their layer, select the pipe through the spawn menu to trigger layered placement) <!-- image needed -->
@@ -128,13 +141,12 @@ Only to this if you can handle modifying a yml map file. YOu can change the targ
   - Linking can be done manually with a multitool (**MAKE SURE TO DESTROY SAID MULTITOOL OR CLEAR IT'S NETWORK BEFORE SAVING THE GRID** (it will make invalid popup in the ship.yml file))
 * Colored pipe networks (done with the command below)
   - #990000 for waste
-  - #0055CC for distro <!-- [R] I've typed these from the top of my head, if we want to ever change these LMK -->
+  - #0055CC for distro
 
 ```admonish info
 colornetwork [Pipe ID (you can see it by right clicking the pipe)] Pipe [color hex code (ex: #99000)]
 ```
   The command automatically colors the entire connected pipe network, try to use it when you're finished laying it down.
-
  
 *Internal ship components*
 * Mini gravity generator
@@ -157,38 +169,19 @@ colornetwork [Pipe ID (you can see it by right clicking the pipe)] Pipe [color h
   - Unless the ship has a gimmick in mind (like strafing or omnidirectionnal), you should focus on main thrust.
   - You can protected thrusters with grilles
   - Keep the exhaust zone of thrusters except for the above scenario. 3 tiles of free space for regular thrusters & 7 for large thrusters.
-* *(optional)* Large thrusters (keep in mind their large power draw!) <!-- [R] This is my personnal ruling, lmk what you think.-->
+* *(optional)* Large thrusters (keep in mind their large power draw!)
    - Small ships: Only allowed for main thrust
-   - Medium & below: Only allowed for opposing directions (left/right or front/back.) <!-- [R] See RSC scallywag, I think it's a great use of this rule. -->
+   - Medium & below: Only allowed for opposing directions. I.E left/right or front/back. (See the RSC Scallywag, it's a great example of that rule.)
    - Large & above: All directions allowed
 * Reinforced hull plating under ship guns & thrusters (necessary so they aren't shot off easily)
-  - Decal or catwalk on top for aesthetics <!-- Insert image below -->
+  - Decal or catwalk on top for aesthetics
 
 *Meta*
-* Warp Point (for ghost spectator reasons) <!-- [R] Can't we achieve the same with upstream station beacons ? I'll look into it but lmk if you got an answer -->
-* Latejoin spawn point - Keep in a crew/habitable area! <!-- [R] I'd like to do away with this down the line and replace with cryopods, also wallmounted cryopods for smaller ships, possibly. Consequently moving it to generic ship comps. -->
-<!-- BecomeStation component is automatically added when purchasing a grid. I'm looking into making the same happen for Roof -->
+* Warp Point (for ghost spectator reasons)
+* Latejoin spawn point - Keep in a crew/habitable area! 
 * RoofComponent on your grid (done via F7 objects menu, same way you add BecomesStation. Add the roof enabled/disabled markers to all tiles you want to not be affected by planet lighting (such as desert planet).)
 * No Roof markers on external areas (for expedition lighting namely) 
-* Vacuum markers on enclosed spaces that are meant to be spaced (like atmos burn chambers & fully spaced ships) <!-- [R] We need a proper talk about this. Chek https://github.com/Monolith-Station/mono-docs/pull/18 for arguments for & against -->
-
-## Combat Requirements
-*All Vessels*
-* Gunnery console, same orientation as Shuttle Console
-* Gunnery server (power of the server depending on ship size) <!-- [R] LMK what you think of the server power rule, this was in mind for normal ships, I'm unsure about ADS-->
-  - Small: low 
-  - Medium: medium & below
-  - Large: high & below
-  - Capital: ultra high & below
-  
-* Weapons relevant to shuttle archetype (keep the armament consistant. A full ballistic ship uses ballistic PD like L85s, not laser PD.)
-    - Be judicial with use of heavy weapons (e.g Torpedoes, Charon, Cyrexa, etc) - Don’t map on light or civilian vessels!
-    - All shuttles should have some kind of armament. For civ ships, a couple L85s is fine.
-* Do Not Over-supply ships - keep personnel armament to a minimum, and at most provide basic equipment - players can kit out their ships themselves! (An example is a beanbag kammerer, or a MK-58.)
-  
-*Factions/PMC* <!-- Rework this part a bit for PMCs and give examples if possible -->
-* Dedicated combat ships are more lenient in terms of weapon limitations. However, make sure they fulfill a specific niche in combat. Combat ships should also have some kind of “economy” purpose for downtime - cargo bays, small R&D, chemistry, anything so long as it does not outvalue a vessel dedicated to such economy.
-
+* Vacuum markers on enclosed spaces that are meant to be spaced (like atmos burn chambers & fully spaced ships)
 
 ## Economy Functionality Requirements
 These are general requirments for ship designation. Feel free to lightly deviate from them if you think this serves the spirit of the ship. (doing so doesn't guarantee approval)
@@ -265,7 +258,6 @@ These are general requirments for ship designation. Feel free to lightly deviate
 * Plasteel Chef vender
 * If you have a walk in freezer, put a meat spike in it (and a freezer container)
 
-
 **Scrapyard Guidelines**
 Scrapyard ships are ships that are "flying shit boxes" in spirit. 
 **This means that a ship not meeting guidelines, only to brand it as scrapyard later for it to pass review will get it merged. Scrapyard ships should be pretty shit boxes.**
@@ -281,10 +273,36 @@ Scrapyard ships are ships that are "flying shit boxes" in spirit.
 * Ships can, and are encouraged to, have experimental nonstandard features (example: disposal chute item cannon).
 
 
-**Examples** (TBD) <!-- [R] Do we include images at the end of the guidelines or progressively ? I think it's better to do it progressively. -->
-Frontier Image credits:
-arimah (discord)
-alkheemist (discord)
+# Combat ruling
+## Ship gun usage & gunnery server ruling
+*  **Keep the armament consistant**. Non exhaustive examples below:
+    - High tech ships use laser mounts, light and directionnal armor, shields
+	- Low tech ships use ballistic mounts, and heavy armor
+* Gunnery server (power of the server depending on ship size)
+  - Small: low 
+  - Medium: medium & below
+  - Large: high & below
+  - Capital: ultra high & below by default. **Liable to exceptions on a case by case basis (discuss with maintainers).**
+
+* EMP gun mounts
+   - should be used to fill specific niche (like a boarding vessel, interceptor police craft etc..) 
+## Combat requirements
+*All Vessels*
+* Gunnery console, same orientation as Shuttle Console  
+* All shuttles should have some kind of armament. For civ ships, a couple L85s is fine.
+* Do Not Over-supply ships - keep personnel armament to a minimum, and at most provide basic equipment - players can kit out their ships themselves! (An example is a beanbag kammerer, or a MK-58.)
+  
+*Non faction military ships*
+* Dedicated combat ships should be filling a unique niche in combat
+* Combat ships should also have some kind of “economy” purpose for downtime
+   - cargo bays, small R&D, chemistry, anything so long as it does not outvalue a vessel dedicated to such economy.
+
+
+
+
+
+
+<!-- **Examples** (TBD) 
 
 
 Figure 1: Decaled/Un-decaled room (Note the usage of catwalks!)
