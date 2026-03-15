@@ -21,7 +21,10 @@ Monolith
 - [Shipyard](en/monolith/shipyard.md)
   - [Faction Ship Design](en/monolith/shipyard/faction_guidelines.md)
   - [Ship Guidelines](en/monolith/shipyard/ship_guidelines.md)
-
+- [Combat](en/monolith/combat.md)
+  - [Vocab/Important Concepts](en/monolith/combat/vocab.md)
+  - [Ground Combat](en/monolith/combat/groundcombat.md)
+  - [Space Combat](en/monolith/combat/spacecombat.md)
 
 
 
