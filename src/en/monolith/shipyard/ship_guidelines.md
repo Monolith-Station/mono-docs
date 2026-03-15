@@ -27,6 +27,7 @@ To render ship images use the following command:
 ```admonish info
 dotnet run ---project Content.MapRenderer Resources/Maps/_Mono/Shuttles/your_shuttle.yml
 ```
+
 Keep in mind that:
 * It can be used for multiple ships
 * It only works for ships in the Resources folder
