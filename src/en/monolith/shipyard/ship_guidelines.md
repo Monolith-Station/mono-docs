@@ -177,60 +177,97 @@ colornetwork [Pipe ID (you can see it by right clicking the pipe)] Pipe [color h
 * If the ship's components present any hazard such as radiation, the ship must provide corresponding protective gear and, if applicable, shielding.
 
 *External ship components*
-* Exterior walls should be “reinforced” (plasteel) walls
-* Follow the below example when placing walls under plating. For what is allowed, allowed on a case by case basis & forbidden
-  ![image](exteriorTileRuling.png)
+* Exterior walls should be Reinforced Steel walls and above.
 * External airlocks & docking ports
   - Exterior doors should either be docks or “external” airlocks
   - Directional fans under all external airlocks
   - Airlock intermediate space (Airlock doors should bolt each other when the opposite door is open!)
+* Reinforced hull plating under ship guns & thrusters (necessary so they aren't shot off easily)
+  - Decal or catwalk on top for aesthetics
+
+*Thrusters guidelines*
+* Follow the below example when placing walls under plating. For what is allowed, allowed on a case by case basis & forbidden
+  ![image](exteriorTileRuling.png)
 * Thrusters in all four directions 
   - When placing them, make them look like they are part of the hull, not hanging out. See non-exhaustive example below
   ![image](thrusterPlacementExamples.png)
   - Unless the ship has a gimmick in mind (like strafing or omnidirectionnal), you should focus on main thrust.
-  - You can protected thrusters with grilles
-  - Keep the exhaust zone of thrusters except for the above scenario. 3 tiles of free space for regular thrusters & 7 for large thrusters.
+  - You can protect thrusters with grilles
+  - Keep the exhaust zone of thrusters except for the above scenario. 
+    - **3 tiles of free space for regular thrusters & 7 for large thrusters.**
+
 * *(optional)* Large thrusters (keep in mind their large power draw!)
    - Small ships: Only allowed for main thrust
    - Medium & below: Only allowed for opposing directions. I.E left/right or front/back. (See the RSC Scallywag, it's a great example of that rule.)
    - Large & above: All directions allowed
 * Integrate your thrusters properly into the hull ! Follow the below example for what is allowed, allowed on a case by case basis & forbidden
   ![image](largeThrusterRuling.png)
-* Reinforced hull plating under ship guns & thrusters (necessary so they aren't shot off easily)
-  - Decal or catwalk on top for aesthetics
+
+
+* **APPLICABLE FOR SMALL/MICRO SHIPS ONLY** Small ships and below have relaxed thruster guidelines to allow for more interesting shapes. See non exhaustive example below
+  ![image](relaxedThrusterGuidelines.png)
 
 *Meta*
 * Warp Point (for ghost spectator reasons)
 * Latejoin spawn point - Keep in a crew/habitable area! 
-* RoofComponent on your grid (done via F7 objects menu, same way you add BecomesStation. Add the roof enabled/disabled markers to all tiles you want to not be affected by planet lighting (such as desert planet).)
-* No Roof markers on external areas (for expedition lighting namely) 
+* Add the **Roof** component on your grid 
+  - To do so, execute the command "vv [gridID]" and in the "Server Components" tab press the Add Component button
+  - Add the roof enabled/disabled markers to all tiles you want to not be affected by planet lighting (such as exped planets).
+  - No Roof markers on external areas (for expedition lighting namely) 
 * Vacuum markers on enclosed spaces that are meant to be spaced (like atmos burn chambers & fully spaced ships)
 
 # Combat guidelines
-## Ship gun usage & gunnery server ruling
-*  **Keep the armament consistant**. Non exhaustive examples below:
-    - High tech ships use laser mounts, light and directionnal armor, shields
-	- Low tech ships use ballistic mounts, and heavy armor
+These guidelines apply to all vessels. Combat requirements from other guidelines overule parts of these guidelines (such as carriers having lower power gunnery servers)
+
+*Mandatory for ships with ship mounts*
+* Gunnery console, same orientation as Shuttle Console
+* Gunnery server (see following section for more details)
+
+*Military supplies*
+* Do Not Over-supply ships - keep personnel armament to a minimum, and at most provide basic equipment - players can kit out their ships themselves! 
+  - An example is a beanbag kammerer, or a MK-58.
+
+*Non faction military ships*
+* Dedicated combat ships should be filling a unique niche in combat
+* Combat ships should also have some kind of “economy” purpose for downtime
+   - cargo bays, small R&D, chemistry, anything so long as it does not outvalue a vessel dedicated to such economy.
+
+## Gunnery server ruling
+
 * Gunnery server (power of the server depending on ship size)
   - Small: low 
   - Medium: medium & below
   - Large: high & below
   - Capital: ultra high & below by default. **Liable to exceptions on a case by case basis (discuss with maintainers).**
 
+## Ship mounts
+* All shuttles should have some kind of armaments (exception applies for (minor) factions hulls). 
+  - A couple L-85s to act as point defense is fine for regular CIV ships.
+*  **Keep the armament consistant**. Non exhaustive examples below:
+  - High tech ships use laser mounts, light and directionnal armor, shields
+	- Low tech ships use ballistic mounts, and heavy armor
 * EMP gun mounts
    - should be used to fill specific niche (like a boarding vessel, interceptor police craft etc..) 
-## Combat requirements
-*All Vessels*
-* Gunnery console, same orientation as Shuttle Console  
-* All shuttles should have some kind of armament. For civ ships, a couple L85s is fine.
-* Do Not Over-supply ships - keep personnel armament to a minimum, and at most provide basic equipment - players can kit out their ships themselves! (An example is a beanbag kammerer, or a MK-58.)
-  
-*Non faction military ships*
-* Dedicated combat ships should be filling a unique niche in combat
-* Combat ships should also have some kind of “economy” purpose for downtime
-   - cargo bays, small R&D, chemistry, anything so long as it does not outvalue a vessel dedicated to such economy.
 
-## Scrapyard Guidelines
+## Armor & shields
+In monolith, armor & shields are what define how long your ship can sustain damage before it's insides can be punched through.
+
+*CIV ships*
+* Reinforced steel walls should be the privileged kind of armor
+* Extras (pick one, keep in mind the addition of these when calculating the price !)
+  * Directional plastitanium shielding 
+  * Energy shield (MS-100 only)
+
+*MIL ships*
+* MIL ships are granted a single layer of plastitanium walls.
+* External components (ship guns, thrusters, airlocks..) should be surrounded with plastitanium walls
+* For extra armor, you may add additionnal layers of reinforced steel walls
+
+* Extras (pick one)
+  - Directional plastitanium armor (to cover weakpoints and possibly thruster blocks!)
+  - Energy shield (MS-100 only)
+
+# Scrapyard Guidelines
 Scrapyard ships are ships that are "flying shit boxes" in spirit. 
 **This means that a ship not meeting guidelines, only to brand it as scrapyard later for it to pass review will get it merged. Scrapyard ships should be pretty shit boxes.**
 
